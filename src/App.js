@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import ConferenceManagement from './componentVroom/assignmentTwo/ConferenceManagement'
+import CountingMachine from './componentVroom/assignmentOne/CountingMachine'
+import Login from './componentVroom/Login'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+    <div >
+      <BrowserRouter basename="">
+
+
+        <Switch>
+          <Route component={Login} path="/login" exact></Route>
+          <Route component={ConferenceManagement} path="/conferenceManagement" exact></Route>
+          <Route component={CountingMachine} path="/countingMachine" exact></Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
